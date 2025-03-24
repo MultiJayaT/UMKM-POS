@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Transaksi</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; border: 1px solid #ddd; padding: 10px; }
+        h2 { margin-bottom: 10px; }
+        table { width: 100%; text-align: left; }
+        th, td { padding: 5px; }
+        .total { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Nota Transaksi</h2>
+        <p><strong>Tanggal:</strong> {{date}}</p>
+        <p><strong>Pelanggan:</strong> {{customer}}</p>
+
+        <table border="1">
+            <tr>
+                <th>Produk</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+            </tr>
+            {{#each items}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.quantity}}</td>
+                <td>{{this.subtotal}}</td>
+            </tr>
+            {{/each}}
+        </table>
+
+        <p class="total">Total: {{total}}</p>
+        <p>Pembayaran: {{payment}}</p>
+        <p>Kembalian: {{change_amount}}</p>
+
+        <p>Terima kasih sudah berbelanja!</p>
+    </div>
+</body>
+</html>
